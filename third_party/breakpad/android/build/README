@@ -1,0 +1,6 @@
+1.修改Application.mk
+APP_STL := c++_static
+APP_ABI := armeabi-v7a
+2.在breakpad-master\src\third_party下新建lss目录
+将linux_syscall_support.zip解压后的linux_syscall_support.h放入lss目录
+3.在breakpad-master\android\sample_app下执行ndk-build

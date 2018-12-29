@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#000000"
+    android:dither="true"
+    android:gravity="bottom"
+    android:src="@drawable/ic_meeting_background"
+    android:tileMode="disabled" />

@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="utility">
+      <UniqueIdentifier>{c4ec2fa3-67ab-4340-866f-84c71a81adfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua">
+      <UniqueIdentifier>{136e741f-0de3-46ae-8728-fb2c66534832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua\module">
+      <UniqueIdentifier>{aedc57e8-9a02-4ac6-be47-da39e02bbe6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua\module\cjson">
+      <UniqueIdentifier>{aebdcd06-f526-4a34-9a29-8fa0205ea6a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{d7dee740-d39a-41bc-b378-0aea6d7566f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="state">
+      <UniqueIdentifier>{041e402d-1f72-48c3-83fe-f4e5b6a5a7c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="session">
+      <UniqueIdentifier>{f792f44f-e8c4-4403-ada4-9864c1e9f385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="api">
+      <UniqueIdentifier>{511695d1-61dd-4866-871d-672bb10853d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="http">
+      <UniqueIdentifier>{606d3437-3ffb-4600-a9f7-767a538ecb75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service">
+      <UniqueIdentifier>{37861a6d-f550-4a01-9299-c8923e2cda60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="comLib">
+      <UniqueIdentifier>{33158cbf-e484-4432-82bd-2b5f50127c09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="log">
+      <UniqueIdentifier>{c78dc898-14f7-4b0f-bff8-95da93f4b804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\json">
+      <UniqueIdentifier>{f89bd7b5-c7f8-4981-ae7e-bde7b0186865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server">
+      <UniqueIdentifier>{7093fbec-f184-4cf4-8edf-855cb931928f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\ca">
+      <UniqueIdentifier>{f0d58dcb-b3da-4215-a03e-f45b7725b040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\statusd">
+      <UniqueIdentifier>{dc605ebe-c2b2-4ac8-92da-b7526a4fc7eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="api\bee">
+      <UniqueIdentifier>{3abc5837-2788-4cfd-bc34-7c7e2ac20226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="api\bee\win">
+      <UniqueIdentifier>{fe599ecd-4540-4913-80de-8f1b068681d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="api\bee\media">
+      <UniqueIdentifier>{192e2a9c-8fd6-49d9-aa46-103b983415ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{04ad9327-03ac-459b-9e1f-b0004c5121a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\win32">
+      <UniqueIdentifier>{c5fba20d-d89a-4401-9c9c-14ccc6849f46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="api\bee\base">
+      <UniqueIdentifier>{68b2fb27-d001-44cc-b73b-67ed47ac87a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="internal">
+      <UniqueIdentifier>{b8a909e4-77bf-4964-90a1-854372736181}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\utility\algorithm.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\buffer_pool.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\common.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\crypto.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\iobuffer.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\timer.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\lua_default_http_session.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\lua_engine.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_crypto_module.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_data_promise.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_http_module.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_http_reader.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_http_session.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_iobuffer_module.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_lws_module.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_lws_service.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_lws_session.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_module_mgr.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_video_cache.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_module.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\cjson\fpconv.h">
+      <Filter>lua\module\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\cjson\lua_cjson.h">
+      <Filter>lua\module\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\cjson\lua_extensions.h">
+      <Filter>lua\module\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\cjson\strbuf.h">
+      <Filter>lua\module\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\cjson\tolua++.h">
+      <Filter>lua\module\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\cjson\tolua_fix.h">
+      <Filter>lua\module\cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\network\http_session.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\network\http_state_machine.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\network\io_service.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\network\tcp_state_machine.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\state\async_state_machine.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\state\simple_state_machine.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\state\state.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\state\state_event.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\session\bee_session.h">
+      <Filter>session</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\session\session_manager.h">
+      <Filter>session</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_header.h">
+      <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_request.h">
+      <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_response.h">
+      <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\service\bee_promise.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_service.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\SafeQueue.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\SafeSet.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\Semaphore.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\SingleEvent.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\Thread.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\comdefine.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\Mutex.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\SafeDeque.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\SafeList.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\comLib\SafeMap.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_peer_connection.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_video_sink.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_timer.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_timer_module.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\log\logger_impl.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\log\logger.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\reader.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\value.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\writer.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\autolink.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\config.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\features.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\forwards.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\json.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\json\json_batchallocator.h">
+      <Filter>utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utility\file_util.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\server\ca\ca_def.h">
+      <Filter>server\ca</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\server\ca\ca_client.h">
+      <Filter>server\ca</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\server\statusd\statusd_client.h">
+      <Filter>server\statusd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\server\statusd\statusd_def.h">
+      <Filter>server\statusd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\service\bee_entrance.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\media\video_frame.h">
+      <Filter>api\bee\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\media\video_renderer.h">
+      <Filter>api\bee\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\media\video_source.h">
+      <Filter>api\bee\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\media\audio_source.h">
+      <Filter>api\bee\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\media\audio_source_default.h">
+      <Filter>api\bee\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_room_sink.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_source_cam.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\video_room_def.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_renderer_d3d.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_renderer_d3d_imp.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\platform\win32\audio_device_module_wrapper.h">
+      <Filter>platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\platform\win32\log_stats.h">
+      <Filter>platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\win_d3d_resize_handler.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\base\bee_service.h">
+      <Filter>api\bee\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\base\bee_sink.h">
+      <Filter>api\bee\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\base\bee.h">
+      <Filter>api\bee\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\base\bee_define.h">
+      <Filter>api\bee\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\internal\video_source_internal.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\internal\audio_source_internal.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\internal\video_frame_internal.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\internal\video_renderer_internal.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_room.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_stats_log_observer.h">
+      <Filter>lua\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\platform\win32\win_video_track_source.h">
+      <Filter>platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_source.h">
+      <Filter>api\bee\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\api\bee\media\audio_source_custom.h">
+      <Filter>api\bee\media</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\utility\buffer_pool.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utility\crypto.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\lua_default_http_session.cpp">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\lua_engine.cpp">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_crypto_module.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_data_promise.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_http_module.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_http_reader.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_http_session.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_iobuffer_module.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_lws_module.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_lws_service.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_lws_session.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_video_cache.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_module.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\cjson\lua_cjson.c">
+      <Filter>lua\module\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\cjson\lua_extensions.c">
+      <Filter>lua\module\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\cjson\strbuf.c">
+      <Filter>lua\module\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\network\http_session.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\network\http_state_machine.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\network\io_service.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\network\tcp_state_machine.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\state\async_state_machine.cpp">
+      <Filter>state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\state\simple_state_machine.cpp">
+      <Filter>state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\state\state.cpp">
+      <Filter>state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\session\bee_session.cpp">
+      <Filter>session</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\session\session_manager.cpp">
+      <Filter>session</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_request.cpp">
+      <Filter>http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_response.cpp">
+      <Filter>http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\service\bee_promise.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_service.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_peer_connection.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_video_sink.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_timer.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_timer_module.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\cjson\fpconv.c">
+      <Filter>lua\module\cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\log\logger.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\log\logger_impl.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utility\json\json_reader.cpp">
+      <Filter>utility\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utility\json\json_value.cpp">
+      <Filter>utility\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utility\json\json_writer.cpp">
+      <Filter>utility\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utility\file_util.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\server\ca\ca_client.cpp">
+      <Filter>server\ca</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\server\statusd\statusd_client.cpp">
+      <Filter>server\statusd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\service\bee_entrance.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\media\video_frame.cpp">
+      <Filter>api\bee\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\media\video_renderer.cpp">
+      <Filter>api\bee\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\media\video_source.cpp">
+      <Filter>api\bee\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\media\audio_source.cpp">
+      <Filter>api\bee\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\media\audio_source_default.cpp">
+      <Filter>api\bee\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_source_cam.cpp">
+      <Filter>api\bee\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_renderer_d3d.cpp">
+      <Filter>api\bee\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_renderer_d3d_imp.cpp">
+      <Filter>api\bee\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\platform\win32\audio_device_module_wrapper.cpp">
+      <Filter>platform\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\platform\win32\log_stats.cpp">
+      <Filter>platform\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\base\bee.cpp">
+      <Filter>api\bee\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\base\bee_service.cpp">
+      <Filter>api\bee\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\internal\video_source_internal.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\internal\audio_source_internal.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\internal\video_frame_internal.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\internal\video_renderer_internal.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_room.cpp">
+      <Filter>api\bee\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_stats_log_observer.cpp">
+      <Filter>lua\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\platform\win32\win_video_track_source.cc">
+      <Filter>platform\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_source.cpp">
+      <Filter>api\bee\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api\bee\media\audio_source_custom.cpp">
+      <Filter>api\bee\media</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\utility\json\json_internalarray.inl">
+      <Filter>utility\json</Filter>
+    </None>
+    <None Include="..\..\..\src\utility\json\json_internalmap.inl">
+      <Filter>utility\json</Filter>
+    </None>
+    <None Include="..\..\..\src\utility\json\json_valueiterator.inl">
+      <Filter>utility\json</Filter>
+    </None>
+  </ItemGroup>
+</Project>

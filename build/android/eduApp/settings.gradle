@@ -1,0 +1,3 @@
+include ':app'
+include ':Bee'
+project(':Bee').projectDir=new File('../BeeDemo/Bee')

@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.sohu.tv.beedemo"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName getVersion()
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:design:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile project(":Bee")
+}
+
+def getVersion() {
+    String path = rootDir.getAbsolutePath() + "\\..\\..\\..\\src\\api\\bee\\base\\"
+    File file = new File(path + "bee_version.h")
+    println "[file path=]" + file.path
+    file.eachLine { line, lineNo ->
+        if (line.find("#define BEE_VERSION")) {
+            println "${lineNo} ${line}"
+            int value = line.lastIndexOf(" ")
+            String version = line.substring(value, line.length())
+            println version
+            return version
+        }
+    }
+
+    return "2.0.1.1"
+}

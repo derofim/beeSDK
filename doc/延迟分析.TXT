@@ -1,0 +1,95 @@
+﻿音频时间戳更新
+Channel::UpdatePlayoutTimestamp
+
+  获取从音频JitterBuffer出来的音频的时间戳
+	jitter_buffer_playout_timestamp_ = audio_coding_->PlayoutTimestamp()
+	AudioCodingModuleImpl::PlayoutTimestamp
+		AcmReceiver::GetPlayoutTimestamp
+			NetEqImpl::GetPlayoutTimestamp
+				return rtc::Optional<uint32_t>(timestamp_scaler_->ToExternal(playout_timestamp_)); //返回playout_timestamp_，获得neteq中缓存的音频数据的时间戳
+				
+				采样频率为8K，每秒有8000个采样，每次输出长度为10ms，对应的采样数output_size_samples_
+
+				NetEqImpl::NetEqImpl
+			  fs_hz_ = fs;
+			  fs_mult_ = fs / 8000; //采样频率的倍数
+			  output_size_samples_ = static_cast<size_t>(kOutputSizeMs * 8 * fs_mult_);
+			  
+			  一个采样有1/8ms，10ms有10×8=80个采样，如果是16000的频率，则乘以2
+			
+			  int NetEqImpl::GetAudioInternal(AudioFrame* audio_frame, bool* muted)
+				从NetEq中获取音频帧，每次获取后
+				playout_timestamp_ += static_cast<uint32_t>(output_size_samples_);
+				playout_timestamp_相当于一个计数器，计算从NetEQ中拿走了多少个数据，每个数据有10ms；
+				
+				
+				//设备选择
+				VoEBaseImpl::Init
+				if (external_adm == nullptr) {
+					set_audio_device(AudioDeviceModuleImpl); //就是设置_voe::SharedData的audioDevicePtr
+				} else {
+				  set_audio_device(external_adm);
+				}
+				
+				VoEBaseImpl::InitializeChannel(……*shared_->audio_device()……)
+	
+	//获取音频设备的播放延迟
+	uint16_t delay_ms = 0;
+	_audioDeviceModulePtr->PlayoutDelay(&delay_ms)
+		AudioDeviceModuleImpl::PlayoutDelay
+			AudioDeviceWindowsCore::PlayoutDelay //获得音频设备内部的延迟
+			
+			AudioDeviceWindowsCore::DoRenderThread
+				playout_delay = ROUND((double(_writtenSamples) /
+                  _devicePlaySampleRate - double(pos) / freq) * 1000.0); 
+        _sndCardPlayDelay = playout_delay; //_sndCardPlayDelay就是设备的延迟，_writtenSamples是已经发给发给设备的数据长度，pos是音频设备内部的播放位置，减掉后就是设备内部未播放的数据长度，也就是延迟。
+        
+  playout_timestamp_表示从neteq出来的理论上的时间戳，但是由于设备内部有延迟delay_ms，playout_timestamp_- delay_ms就是实际上当前时间点正在播放的时间戳，也就是playout_timestamp_rtcp_或者playout_timestamp_rtp_。
+  
+  
+  RtpStreamsSynchronizer::Process
+  音视频同步
+  1)获得当前的视频目标延迟，也就是googTargetDelayMs
+  const int current_video_delay_ms = video_receiver_->Delay(); //调用VCMTiming::TargetDelayInternal()
+  
+  2)获得音频当前的延迟
+  int audio_jitter_buffer_delay_ms = 0; //音频jitter_buffer的延迟
+  int playout_buffer_delay_ms = 0; //播放设备的延迟
+  if (voe_sync_interface_->GetDelayEstimate(voe_channel_id_,
+                                            &audio_jitter_buffer_delay_ms,
+                                            &playout_buffer_delay_ms) != 0) {
+    return;
+  } 
+  
+  const int current_audio_delay_ms = audio_jitter_buffer_delay_ms + playout_buffer_delay_ms; //音频总延迟
+  
+  3)计算音视频的到达延迟差(通过收到的rtp流中的音视频最新数据包的时间戳计算)
+  int relative_delay_ms;
+  // Calculate how much later or earlier the audio stream is compared to video.
+  if (!sync_->ComputeRelativeDelay(audio_measurement_, video_measurement_, &relative_delay_ms)) {
+    return;
+  }
+  
+  4)计算音视频的目标延迟，基于目前音视频的到达延迟差、音频总延迟、视频之前目标延迟，计算当前的音视频的目标延迟(也就是)。
+  int target_audio_delay_ms = 0;
+  int target_video_delay_ms = current_video_delay_ms;
+  // Calculate the necessary extra audio delay and desired total video
+  // delay to get the streams in sync.
+  if (!sync_->ComputeDelays(relative_delay_ms,
+                            current_audio_delay_ms,
+                            &target_audio_delay_ms,
+                            &target_video_delay_ms)) {
+    return;
+  }
+  
+  5)设置视频最小播放延迟为计算出的target_video_delay_ms，也就是通过音视频同步模块计算出的视频最小播放延迟。
+  video_receiver_->SetMinimumPlayoutDelay(target_video_delay_ms);
+  
+  
+int VCMTiming::TargetDelayInternal() const {
+  return std::max(min_playout_delay_ms_,
+                  jitter_delay_ms_ + RequiredDecodeTimeMs() + render_delay_ms_);
+}
+两个值，一个是上述的通过音视频同步模块计算出的视频最小播放延迟，一个是JitterBuffer延迟(网络抖动相关)+解码延迟+渲染延迟，取其最大者当作目标延迟。
+
+current_delay_ms_是一个动态修改的值，每个视频帧到达都会更新，初始时是目标延迟，根据前后到达两个包的延迟变化来动态修改current_delay_ms_。

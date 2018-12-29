@@ -1,0 +1,68 @@
+﻿修改头文件
+D:\work\mediasdk\third_party\openssl\win32\build\openssl-1.1.0h\include\openssl\opensslconf.h.in
+#elif __GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ > 0)
+==>
+#elif defined(__GNUC__) && (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ > 0))
+
+配置
+perl Configure VC-WIN32 --prefix=D:\work\mediasdk\third_party\openssl\win32\build\openssl-1.1.0h\output -DOPENSSL_API_COMPAT=0x00906000L
+
+编译
+nmake
+nmake test
+nmake install
+nmake clean
+
+添加宏到rtc_base_generic.ninja
+-DSSL_USE_OPENSSL -DHAVE_OPENSSL_SSL_H -DFEATURE_ENABLE_SSL -DOPENSSL_API_COMPAT=0x00906000L
+
+opensslsessioncache.h
+增加
+#include <openssl/ssl.h>
+
+webrtc.ninja
+增加
+obj/api/audio_codecs/builtin_audio_decoder_factory/builtin_audio_decoder_factory.obj obj/api/audio_codecs/opus/audio_decoder_opus/audio_decoder_opus.obj obj/api/audio_codecs/isac/audio_decoder_isac_float/audio_decoder_isac_float.obj obj/api/audio_codecs/g722/audio_decoder_g722/audio_decoder_g722.obj obj/api/audio_codecs/ilbc/audio_decoder_ilbc/audio_decoder_ilbc.obj obj/api/audio_codecs/g711/audio_decoder_g711/audio_decoder_g711.obj obj/api/audio_codecs/L16/audio_decoder_L16/audio_decoder_L16.obj
+
+
+MD
+已经不再支持is_component_build，is_component_build表示会以动态库输出，并且使用MD，现在必须输出静态库，又必须使用MD的话，is_component_build=false，同时需要修改src\build\config\win\BUILD.gn，
+config("default_crt") {
+  if (is_component_build) {
+    # Component mode: dynamic CRT. Since the library is shared, it requires
+    # exceptions or will give errors about things not matching, so keep
+    # exceptions on.
+    configs = [ ":dynamic_crt" ]
+  } else {
+    if (current_os == "winuwp") {
+      # https://blogs.msdn.microsoft.com/vcblog/2014/06/10/the-great-c-runtime-crt-refactoring/
+      # contains a details explanation of what is happening with the Windows
+      # CRT in Visual Studio releases related to Windows store applications.
+      configs = [ ":dynamic_crt" ]
+    } else {
+      # Desktop Windows: static CRT.
+      configs = [ ":static_crt" ]
+    }
+  }
+}
+可以看到默认在is_component_build时使用dynamic_crt配置，但是不支持is_component_build那只能使用static_crt配置，
+config("static_crt") {
+  if (is_debug) {
+    # This pulls in the static debug CRT and defines _DEBUG
+    cflags = [ "/MTd" ]
+  } else {
+    cflags = [ "/MT" ]
+  }
+}
+改成
+config("static_crt") {
+  if (is_debug) {
+    # This pulls in the static debug CRT and defines _DEBUG
+    cflags = [ "/MTd" ]
+  } else {
+    cflags = [ "/MD" ]
+  }
+}
+gn gen out/release_vs_h264_openssl_md --args="is_debug=false target_os=\"win\" target_cpu=\"x86\" is_component_build=false proprietary_codecs=true rtc_use_h264=true ffmpeg_branding=\"Chrome\" rtc_build_ssl=false rtc_ssl_root=\"D:\work\mediasdk\third_party\openssl\win32\include\"" --ide=vs2017
+
+gn gen out/release_vs_h264_openssl --args="is_debug=false target_os=\"win\" target_cpu=\"x86\" is_component_build=false proprietary_codecs=true rtc_use_h264=true ffmpeg_branding=\"Chrome\" rtc_build_ssl=false rtc_ssl_root=\"D:\work\mediasdk\third_party\openssl\win32\include\"" --ide=vs2017

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 按钮自定义属性 -->
+    <declare-styleable name="StateButton">
+        <!--text color-->
+        <attr name="normalTextColor" format="color" />
+        <attr name="pressedTextColor" format="color" />
+        <attr name="unableTextColor" format="color" />
+
+        <!--stroke width and color, dash width, dash gap-->
+        <attr name="strokeDashWidth" format="dimension" />
+        <attr name="strokeDashGap" format="dimension" />
+        <attr name="normalStrokeWidth" format="dimension" />
+        <attr name="pressedStrokeWidth" format="dimension" />
+        <attr name="unableStrokeWidth" format="dimension" />
+        <attr name="normalStrokeColor" format="color" />
+        <attr name="pressedStrokeColor" format="color" />
+        <attr name="unableStrokeColor" format="color" />
+
+        <!--background color-->
+        <attr name="normalBackgroundColor" format="color" />
+        <attr name="pressedBackgroundColor" format="color" />
+        <attr name="unableBackgroundColor" format="color" />
+
+        <!--background radius-->
+        <attr name="radius" format="dimension" />
+        <attr name="round" format="boolean" />
+
+        <!--animation duration-->
+        <attr name="animationDuration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="BubbleView">
+        <attr name="arrowWidth" format="dimension" />
+        <attr name="angle" format="dimension" />
+        <attr name="arrowHeight" format="dimension" />
+        <attr name="arrowPosition" format="dimension" />
+        <attr name="bubbleColor" format="color" />
+        <attr name="arrowLocation" format="enum">
+            <enum name="left" value="0x00" />
+            <enum name="right" value="0x01" />
+            <enum name="top" value="0x02" />
+            <enum name="bottom" value="0x03" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension"/>
+        <attr name="civ_border_color" format="color"/>
+        <attr name="civ_border_overlay" format="boolean"/>
+        <attr name="civ_fill_color" format="color"/>
+    </declare-styleable>
+</resources>

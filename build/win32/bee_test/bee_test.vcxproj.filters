@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="localserver">
+      <UniqueIdentifier>{059e3872-c103-41b6-99cc-ed447edd2129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{72600824-f737-416c-b882-8d1713d74bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="http">
+      <UniqueIdentifier>{a663d8c5-8687-4464-a5e2-f90030eee824}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bee_connection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="localserver\http_connection.cpp">
+      <Filter>localserver</Filter>
+    </ClCompile>
+    <ClCompile Include="localserver\io_service.cpp">
+      <Filter>localserver</Filter>
+    </ClCompile>
+    <ClCompile Include="localserver\tcp_server.cpp">
+      <Filter>localserver</Filter>
+    </ClCompile>
+    <ClCompile Include="base\buffer_pool.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="http\http_request.cpp">
+      <Filter>http</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bee_connection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="localserver\http_connection.h">
+      <Filter>localserver</Filter>
+    </ClInclude>
+    <ClInclude Include="localserver\io_service.h">
+      <Filter>localserver</Filter>
+    </ClInclude>
+    <ClInclude Include="localserver\local_server.h">
+      <Filter>localserver</Filter>
+    </ClInclude>
+    <ClInclude Include="localserver\tcp_server.h">
+      <Filter>localserver</Filter>
+    </ClInclude>
+    <ClInclude Include="base\algorithm.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\buffer_pool.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\common.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\iobuffer.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\timer.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="http\http_header.h">
+      <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="http\http_request.h">
+      <Filter>http</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

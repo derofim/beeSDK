@@ -1,2 +1,0 @@
-# beeSDK
-webrtc

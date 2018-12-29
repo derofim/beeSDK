@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_MD|Win32">
+      <Configuration>Release_MD</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EC11FB90-2B4B-4D83-A012-C71F04973C43}</ProjectGuid>
+    <RootNamespace>bee</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_MD|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_MD|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\lib\win32\$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\lib\win32\$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_MD|Win32'">
+    <OutDir>..\..\..\lib\win32\$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\third_party\lua\win32\include;..\..\..\third_party\boost\win32\include;..\..\..\third_party\openssl\win32\include;..\..\..\third_party\zlib\win32\include;..\..\..\third_party\libwebsockets\win32\include;..\..\..\third_party\webrtc\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;BEE_EXPORTS;_CRT_SECURE_NO_WARNINGS;LEAK_CHECK;V8_DEPRECATION_WARNINGS;USE_AURA=1;NO_TCMALLOC;FULL_SAFE_BROWSING;SAFE_BROWSING_CSD;SAFE_BROWSING_DB_LOCAL;CHROMIUM_BUILD;_CRT_RAND_S;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;PSAPI_VERSION=1;ENABLE_MEDIA_ROUTER=1;FIELDTRIAL_TESTING_ENABLED;COMPONENT_BUILD;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;NOMINMAX;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;EXPAT_RELATIVE_PATH;HAVE_SCTP;WEBRTC_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4200;4005;%(DisableSpecificWarnings);4099</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>liblua.lib;ssleay32.lib;libeay32.lib;zlib.lib;websockets.lib;zlib_internal.lib;webrtc.lib;boringssl.dll.lib;protobuf_lite.dll.lib;ffmpeg.dll.lib;secur32.lib;msdmo.lib;wmcodecdspuuid.lib;dmoguids.lib;winmm.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\third_party\lua\win32\lib\$(Configuration);..\..\..\third_party\boost\win32\lib;..\..\..\third_party\openssl\win32\lib;..\..\..\third_party\zlib\win32\lib;..\..\..\third_party\libwebsockets\win32\lib\$(Configuration);..\..\..\third_party\webrtc\win32\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>del /f /s /q ..\..\..\include\bee_api.h
+del /f /s /q ..\..\..\include\bee_define.h
+del /f /s /q ..\..\..\test\win32\$(Configuration)\bee.dll
+copy ..\..\..\src\api\bee_api.h ..\..\..\include\
+copy ..\..\..\src\api\bee_define.h ..\..\..\include\
+copy ..\..\..\lib\win32\$(Configuration)\bee.dll ..\..\..\test\win32\$(Configuration)\
+copy ..\..\..\lib\win32\$(Configuration)\bee.pdb ..\..\..\test\win32\$(Configuration)\
+copy ..\..\..\lib\win32\$(Configuration)\bee.dll D:\work\open_source\obs-studio\build\rundir\Debug\bin\32bit\
+copy ..\..\..\lib\win32\$(Configuration)\bee.pdb D:\work\open_source\obs-studio\build\rundir\Debug\bin\32bit\
+
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\src\api;..\..\..\third_party\lua\win32\include;..\..\..\third_party\boost\win32\include;..\..\..\third_party\openssl\win32\include;..\..\..\third_party\zlib\win32\include;..\..\..\third_party\libwebsockets\win32\include;..\..\..\third_party\webrtc\win32\include;..\..\..\third_party\webrtc\win32\include\webrtc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;BEE_EXPORTS;_CRT_SECURE_NO_WARNINGS;V8_DEPRECATION_WARNINGS;USE_AURA=1;NO_TCMALLOC;FULL_SAFE_BROWSING;SAFE_BROWSING_CSD;SAFE_BROWSING_DB_LOCAL;CHROMIUM_BUILD;_CRT_RAND_S;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;PSAPI_VERSION=1;ENABLE_MEDIA_ROUTER=1;FIELDTRIAL_TESTING_ENABLED;COMPONENT_BUILD;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;NOMINMAX;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;EXPAT_RELATIVE_PATH;HAVE_SCTP;WEBRTC_WIN;INCL_EXTRA_HTON_FUNCTIONS;TEST_CA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4200;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>liblua.lib;libssl.lib;libcrypto.lib;zlib.lib;websockets_static.lib;webrtc.lib;secur32.lib;msdmo.lib;wmcodecdspuuid.lib;dmoguids.lib;winmm.lib;strmiids.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\third_party\lua\win32\lib\$(Configuration);..\..\..\third_party\boost\win32\lib;..\..\..\third_party\openssl\win32\lib;..\..\..\third_party\zlib\win32\lib;..\..\..\third_party\libwebsockets\win32\lib\$(Configuration);..\..\..\third_party\webrtc\win32\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Lib>
+      <AdditionalDependencies>websockets_static.lib;liblua.lib;libcrypto.lib;libssl.lib;webrtc.lib;zlib.lib;secur32.lib;msdmo.lib;wmcodecdspuuid.lib;dmoguids.lib;winmm.lib;strmiids.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>..\..\..\third_party\boost\win32\lib;..\..\..\third_party\libwebsockets\win32\lib\$(ConfigurationName);..\..\..\third_party\lua\win32\lib\$(ConfigurationName);..\..\..\third_party\openssl\win32\lib;..\..\..\third_party\webrtc\win32\lib\Release;..\..\..\third_party\zlib\win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_MD|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\src\api;..\..\..\third_party\lua\win32\include;..\..\..\third_party\boost\win32\include;..\..\..\third_party\openssl\win32\include;..\..\..\third_party\zlib\win32\include;..\..\..\third_party\libwebsockets\win32\include;..\..\..\third_party\webrtc\win32\include;..\..\..\third_party\webrtc\win32\include\webrtc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;V8_DEPRECATION_WARNINGS;USE_AURA=1;NO_TCMALLOC;FULL_SAFE_BROWSING;SAFE_BROWSING_CSD;SAFE_BROWSING_DB_LOCAL;CHROMIUM_BUILD;_CRT_RAND_S;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;PSAPI_VERSION=1;ENABLE_MEDIA_ROUTER=1;FIELDTRIAL_TESTING_ENABLED;COMPONENT_BUILD;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;NOMINMAX;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;EXPAT_RELATIVE_PATH;HAVE_SCTP;WEBRTC_WIN;INCL_EXTRA_HTON_FUNCTIONS;TEST_CA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>liblua.lib;ssleay32.lib;libeay32.lib;zlib.lib;websockets.lib;zlib_internal.lib;webrtc.lib;secur32.lib;msdmo.lib;wmcodecdspuuid.lib;dmoguids.lib;winmm.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\third_party\lua\win32\lib\$(Configuration);..\..\..\third_party\boost\win32\lib;..\..\..\third_party\openssl\win32\lib;..\..\..\third_party\zlib\win32\lib;..\..\..\third_party\libwebsockets\win32\lib\$(Configuration);..\..\..\third_party\webrtc\win32\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Lib>
+      <AdditionalDependencies>libboost_date_time-vc141-mt-1_65_1.lib;libboost_regex-vc141-mt-1_65_1.lib;libboost_system-vc141-mt-1_65_1.lib;websockets_static.lib;zlib_internal.lib;liblua.lib;libssl.lib;libcrypto.lib;webrtc.lib;secur32.lib;msdmo.lib;wmcodecdspuuid.lib;dmoguids.lib;winmm.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>..\..\..\third_party\boost\win32\lib;..\..\..\third_party\libwebsockets\win32\lib_md\$(ConfigurationName);..\..\..\third_party\lua\win32\lib_md\$(ConfigurationName);..\..\..\third_party\openssl\win32\lib_md;..\..\..\third_party\webrtc\win32\lib_md\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\api\bee\base\bee.h" />
+    <ClInclude Include="..\..\..\src\api\bee\base\bee_define.h" />
+    <ClInclude Include="..\..\..\src\api\bee\base\bee_service.h" />
+    <ClInclude Include="..\..\..\src\api\bee\base\bee_sink.h" />
+    <ClInclude Include="..\..\..\src\api\bee\media\audio_source.h" />
+    <ClInclude Include="..\..\..\src\api\bee\media\audio_source_custom.h" />
+    <ClInclude Include="..\..\..\src\api\bee\media\audio_source_default.h" />
+    <ClInclude Include="..\..\..\src\api\bee\media\video_frame.h" />
+    <ClInclude Include="..\..\..\src\api\bee\media\video_renderer.h" />
+    <ClInclude Include="..\..\..\src\api\bee\media\video_source.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\video_room_def.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\win_d3d_resize_handler.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_renderer_d3d.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_renderer_d3d_imp.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_room_sink.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_room.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_source.h" />
+    <ClInclude Include="..\..\..\src\api\bee\win\win_video_source_cam.h" />
+    <ClInclude Include="..\..\..\src\comLib\comdefine.h" />
+    <ClInclude Include="..\..\..\src\comLib\Mutex.h" />
+    <ClInclude Include="..\..\..\src\comLib\SafeDeque.h" />
+    <ClInclude Include="..\..\..\src\comLib\SafeList.h" />
+    <ClInclude Include="..\..\..\src\comLib\SafeMap.h" />
+    <ClInclude Include="..\..\..\src\comLib\SafeQueue.h" />
+    <ClInclude Include="..\..\..\src\comLib\SafeSet.h" />
+    <ClInclude Include="..\..\..\src\comLib\Semaphore.h" />
+    <ClInclude Include="..\..\..\src\comLib\SingleEvent.h" />
+    <ClInclude Include="..\..\..\src\comLib\Thread.h" />
+    <ClInclude Include="..\..\..\src\http\http_header.h" />
+    <ClInclude Include="..\..\..\src\http\http_request.h" />
+    <ClInclude Include="..\..\..\src\http\http_response.h" />
+    <ClInclude Include="..\..\..\src\internal\audio_source_internal.h" />
+    <ClInclude Include="..\..\..\src\internal\video_frame_internal.h" />
+    <ClInclude Include="..\..\..\src\internal\video_renderer_internal.h" />
+    <ClInclude Include="..\..\..\src\internal\video_source_internal.h" />
+    <ClInclude Include="..\..\..\src\log\logger.h" />
+    <ClInclude Include="..\..\..\src\log\logger_impl.h" />
+    <ClInclude Include="..\..\..\src\lua\lua_default_http_session.h" />
+    <ClInclude Include="..\..\..\src\lua\lua_engine.h" />
+    <ClInclude Include="..\..\..\src\lua\module\cjson\fpconv.h" />
+    <ClInclude Include="..\..\..\src\lua\module\cjson\lua_cjson.h" />
+    <ClInclude Include="..\..\..\src\lua\module\cjson\lua_extensions.h" />
+    <ClInclude Include="..\..\..\src\lua\module\cjson\strbuf.h" />
+    <ClInclude Include="..\..\..\src\lua\module\cjson\tolua++.h" />
+    <ClInclude Include="..\..\..\src\lua\module\cjson\tolua_fix.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_crypto_module.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_data_promise.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_http_module.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_http_reader.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_http_session.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_iobuffer_module.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_lws_module.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_lws_service.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_lws_session.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_module_mgr.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_timer.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_timer_module.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_peer_connection.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_video_cache.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_module.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_service.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_stats_log_observer.h" />
+    <ClInclude Include="..\..\..\src\lua\module\lua_webrtc_video_sink.h" />
+    <ClInclude Include="..\..\..\src\network\http_session.h" />
+    <ClInclude Include="..\..\..\src\network\http_state_machine.h" />
+    <ClInclude Include="..\..\..\src\network\io_service.h" />
+    <ClInclude Include="..\..\..\src\network\tcp_state_machine.h" />
+    <ClInclude Include="..\..\..\src\platform\win32\audio_device_module_wrapper.h" />
+    <ClInclude Include="..\..\..\src\platform\win32\log_stats.h" />
+    <ClInclude Include="..\..\..\src\platform\win32\win_video_track_source.h" />
+    <ClInclude Include="..\..\..\src\server\ca\ca_client.h" />
+    <ClInclude Include="..\..\..\src\server\ca\ca_def.h" />
+    <ClInclude Include="..\..\..\src\server\statusd\statusd_client.h" />
+    <ClInclude Include="..\..\..\src\server\statusd\statusd_def.h" />
+    <ClInclude Include="..\..\..\src\service\bee_promise.h" />
+    <ClInclude Include="..\..\..\src\service\bee_entrance.h" />
+    <ClInclude Include="..\..\..\src\session\bee_session.h" />
+    <ClInclude Include="..\..\..\src\session\session_manager.h" />
+    <ClInclude Include="..\..\..\src\state\async_state_machine.h" />
+    <ClInclude Include="..\..\..\src\state\simple_state_machine.h" />
+    <ClInclude Include="..\..\..\src\state\state.h" />
+    <ClInclude Include="..\..\..\src\state\state_event.h" />
+    <ClInclude Include="..\..\..\src\utility\algorithm.h" />
+    <ClInclude Include="..\..\..\src\utility\buffer_pool.h" />
+    <ClInclude Include="..\..\..\src\utility\common.h" />
+    <ClInclude Include="..\..\..\src\utility\crypto.h" />
+    <ClInclude Include="..\..\..\src\utility\file_util.h" />
+    <ClInclude Include="..\..\..\src\utility\iobuffer.h" />
+    <ClInclude Include="..\..\..\src\utility\json\autolink.h" />
+    <ClInclude Include="..\..\..\src\utility\json\config.h" />
+    <ClInclude Include="..\..\..\src\utility\json\features.h" />
+    <ClInclude Include="..\..\..\src\utility\json\forwards.h" />
+    <ClInclude Include="..\..\..\src\utility\json\json.h" />
+    <ClInclude Include="..\..\..\src\utility\json\json_batchallocator.h" />
+    <ClInclude Include="..\..\..\src\utility\json\reader.h" />
+    <ClInclude Include="..\..\..\src\utility\json\value.h" />
+    <ClInclude Include="..\..\..\src\utility\json\writer.h" />
+    <ClInclude Include="..\..\..\src\utility\timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\api\bee\base\bee.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\base\bee_service.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\media\audio_source.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\media\audio_source_custom.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\media\audio_source_default.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\media\video_frame.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\media\video_renderer.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\media\video_source.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_renderer_d3d.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_renderer_d3d_imp.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_room.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_source.cpp" />
+    <ClCompile Include="..\..\..\src\api\bee\win\win_video_source_cam.cpp" />
+    <ClCompile Include="..\..\..\src\http\http_request.cpp" />
+    <ClCompile Include="..\..\..\src\http\http_response.cpp" />
+    <ClCompile Include="..\..\..\src\internal\audio_source_internal.cpp" />
+    <ClCompile Include="..\..\..\src\internal\video_frame_internal.cpp" />
+    <ClCompile Include="..\..\..\src\internal\video_renderer_internal.cpp" />
+    <ClCompile Include="..\..\..\src\internal\video_source_internal.cpp" />
+    <ClCompile Include="..\..\..\src\log\logger.cpp" />
+    <ClCompile Include="..\..\..\src\log\logger_impl.cpp" />
+    <ClCompile Include="..\..\..\src\lua\lua_default_http_session.cpp" />
+    <ClCompile Include="..\..\..\src\lua\lua_engine.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\cjson\fpconv.c" />
+    <ClCompile Include="..\..\..\src\lua\module\cjson\lua_cjson.c" />
+    <ClCompile Include="..\..\..\src\lua\module\cjson\lua_extensions.c" />
+    <ClCompile Include="..\..\..\src\lua\module\cjson\strbuf.c" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_crypto_module.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_data_promise.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_http_module.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_http_reader.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_http_session.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_iobuffer_module.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_lws_module.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_lws_service.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_lws_session.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_timer.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_timer_module.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_peer_connection.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_video_cache.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_module.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_service.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_stats_log_observer.cpp" />
+    <ClCompile Include="..\..\..\src\lua\module\lua_webrtc_video_sink.cpp" />
+    <ClCompile Include="..\..\..\src\network\http_session.cpp" />
+    <ClCompile Include="..\..\..\src\network\http_state_machine.cpp" />
+    <ClCompile Include="..\..\..\src\network\io_service.cpp" />
+    <ClCompile Include="..\..\..\src\network\tcp_state_machine.cpp" />
+    <ClCompile Include="..\..\..\src\platform\win32\audio_device_module_wrapper.cpp" />
+    <ClCompile Include="..\..\..\src\platform\win32\log_stats.cpp" />
+    <ClCompile Include="..\..\..\src\platform\win32\win_video_track_source.cc" />
+    <ClCompile Include="..\..\..\src\server\ca\ca_client.cpp" />
+    <ClCompile Include="..\..\..\src\server\statusd\statusd_client.cpp" />
+    <ClCompile Include="..\..\..\src\service\bee_promise.cpp" />
+    <ClCompile Include="..\..\..\src\service\bee_entrance.cpp" />
+    <ClCompile Include="..\..\..\src\session\bee_session.cpp" />
+    <ClCompile Include="..\..\..\src\session\session_manager.cpp" />
+    <ClCompile Include="..\..\..\src\state\async_state_machine.cpp" />
+    <ClCompile Include="..\..\..\src\state\simple_state_machine.cpp" />
+    <ClCompile Include="..\..\..\src\state\state.cpp" />
+    <ClCompile Include="..\..\..\src\utility\buffer_pool.cpp" />
+    <ClCompile Include="..\..\..\src\utility\crypto.cpp" />
+    <ClCompile Include="..\..\..\src\utility\file_util.cpp" />
+    <ClCompile Include="..\..\..\src\utility\json\json_reader.cpp" />
+    <ClCompile Include="..\..\..\src\utility\json\json_value.cpp" />
+    <ClCompile Include="..\..\..\src\utility\json\json_writer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\utility\json\json_internalarray.inl" />
+    <None Include="..\..\..\src\utility\json\json_internalmap.inl" />
+    <None Include="..\..\..\src\utility\json\json_valueiterator.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

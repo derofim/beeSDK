@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ff4081</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <!-- activity backgroud -->
+    <color name="colorBackgroud">#f4df75</color>
+
+    <!-- popbar backgroud-->
+    <color name="colorpopbar">#90000000</color>
+
+    <color name="divider_line">#d9d9d9</color>
+    <color name="bg_content">#f3f3f3</color>
+    <color name="drop_pop_menu_bg_color">#a0000000</color>
+
+    <!-- 字体色 -->
+    <color name="text_title">#1b1b1b</color>
+    <color name="text_content">#818181</color>
+    <color name="text_sub">#919191</color>
+    <color name="text_hint">#c7c7c7</color>
+    <color name="text_black">#404040</color>
+    <color name="text_backgroud">#bebdbd</color>
+
+    <!-- view text -->
+    <color name="uname_color">#36c7c7c7</color>
+</resources>

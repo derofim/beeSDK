@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="242dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/logo"
+            android:contentDescription=""
+            android:layout_alignParentLeft="true" />
+
+        <FrameLayout
+            android:id="@+id/login_register_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/logo"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/login_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.sohu.tv.edu.base.ui.ClearableEditTextWithIcon
+                    android:id="@+id/edit_login_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_white_normal"
+                    android:drawablePadding="15dp"
+                    android:hint="@string/login_hint_account"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#66ffffff"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp" />
+
+                <com.sohu.tv.edu.base.ui.ClearableEditTextWithIcon
+                    android:id="@+id/edit_login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_white_normal"
+                    android:drawablePadding="15dp"
+                    android:hint="@string/login_hint_password"
+                    android:inputType="textPassword"
+                    android:longClickable="false"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#66ffffff"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/done"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#0E6C9C"
+                    android:text="@string/login"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:background="#00000000"
+                        android:textColor="#0E6C9C"
+                        android:text="新用户注册"
+                        android:textSize="15sp"/>
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:background="#00000000"
+                        android:textColor="#0E6C9C"
+                        android:text="忘记密码？"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/register_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.sohu.tv.edu.base.ui.ClearableEditTextWithIcon
+                    android:id="@+id/edit_register_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_white_normal"
+                    android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:drawablePadding="15dp"
+                    android:hint="@string/input_account"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#66ffffff"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp" />
+
+                <com.sohu.tv.edu.base.ui.ClearableEditTextWithIcon
+                    android:id="@+id/edit_register_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_white_normal"
+                    android:drawablePadding="15dp"
+                    android:hint="@string/input_nickname"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#66ffffff"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp" />
+
+                <com.sohu.tv.edu.base.ui.ClearableEditTextWithIcon
+                    android:id="@+id/edit_register_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_white_normal"
+                    android:drawablePadding="15dp"
+                    android:hint="@string/input_password"
+                    android:inputType="textPassword"
+                    android:longClickable="false"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#66ffffff"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/register_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/done"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+
+
+    </RelativeLayout>
+</LinearLayout>

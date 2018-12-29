@@ -1,0 +1,18 @@
+﻿志伟：
+功能：
+1.必须至少推音视频；不应该建立空的peerconnection；
+
+崩溃：
+1.初始化失败，崩溃，有可能是初始化接口线程不同步；
+2.webrtc::AudioTrackJni::InitPlayout()；
+
+适配机型：
+1.三星s5；
+2.nexus 6p；beta。
+
+方达：
+1.jni崩溃；
+2.
+
+cpu比较高。
+

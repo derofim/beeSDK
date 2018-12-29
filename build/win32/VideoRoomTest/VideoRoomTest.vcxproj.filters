@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{1ed92076-4cf0-48e9-b5ee-ea6f6fe12ef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="comLib">
+      <UniqueIdentifier>{63f6228f-28a1-4413-aea2-8f3bcbb4c94d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{9c8c61c9-199f-4012-bdd6-a9220cb4c491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{7dad5c2d-8526-48d3-9165-350f97a05880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\libyuv">
+      <UniqueIdentifier>{aa840de5-399a-4820-9dc1-a48a8a0d7303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\libyuv\include">
+      <UniqueIdentifier>{f8f25d2b-2bc7-4b91-9b19-78e848ff4cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\libyuv\include\libyuv">
+      <UniqueIdentifier>{be7c1c62-e138-4a28-87c7-6defe0565a27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoRoomTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\room_layout.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\video_room.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\SafeList.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\SafeMap.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\SafeQueue.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\SafeSet.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\Semaphore.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\SingleEvent.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\Thread.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\comdefine.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\Mutex.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="comLib\SafeDeque.h">
+      <Filter>comLib</Filter>
+    </ClInclude>
+    <ClInclude Include="json\reader.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\value.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\writer.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\autolink.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\config.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\features.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\forwards.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_batchallocator.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv.h">
+      <Filter>third_party\libyuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\rotate_argb.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\rotate_row.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\row.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\scale.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\scale_argb.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\scale_row.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\version.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\video_common.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\basic_types.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\compare.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\compare_row.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\convert.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\convert_argb.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\convert_from.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\convert_from_argb.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\cpu_id.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\macros_msa.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\mjpeg_decoder.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\planar_functions.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\libyuv\include\libyuv\rotate.h">
+      <Filter>third_party\libyuv\include\libyuv</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoRoomTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\room_layout.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\video_room.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_reader.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_value.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_writer.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VideoRoomTest.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="VideoRoomTest.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="json\json_internalarray.inl">
+      <Filter>json</Filter>
+    </None>
+    <None Include="json\json_internalmap.inl">
+      <Filter>json</Filter>
+    </None>
+    <None Include="json\json_valueiterator.inl">
+      <Filter>json</Filter>
+    </None>
+  </ItemGroup>
+</Project>

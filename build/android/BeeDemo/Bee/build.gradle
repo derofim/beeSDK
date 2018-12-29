@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName getVersion()
+
+        externalNativeBuild {
+            ndkBuild {
+                arguments "NDK_APPLICATION_MK:=src/main/jni/Application.mk"
+                abiFilters "armeabi-v7a"
+            }
+        }
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path "src/main/jni/Android.mk"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+}
+
+def getVersion() {
+    String path = rootDir.getAbsolutePath() + "\\..\\..\\..\\src\\api\\bee\\base\\"
+    File file = new File(path + "bee_version.h")
+    println "[file path=]" + file.path
+    file.eachLine { line, lineNo ->
+        if (line.find("#define BEE_VERSION")) {
+            println "${lineNo} ${line}"
+            int value = line.lastIndexOf(" ")
+            String version = line.substring(value, line.length())
+            println version
+            return version
+        }
+    }
+
+    return "2.0.1.1"
+}
+
+task clearJar(type: Delete) {
+    delete 'build/libs/Bee.jar'////这行表示如果你已经打过一次包了，再进行打包则把原来的包删掉
+}
+
+task makeJar(type: Copy) {
+    from('build/intermediates/packaged-classes/debug/') //这行表示要打包的文件的路径，根据下面的内容，其实是该路径下的classes.jar
+    into('build/libs/')  //这行表示打包完毕后包的生成路径，也就是生成的包存在哪
+    include('classes.jar')  //看到这行，如果你对分包有了解的话，你就可以看出来这行它只是将一些类打包了
+    rename ('classes.jar', 'Bee.jar')
+}
+
+makeJar.dependsOn(clearJar, build)
